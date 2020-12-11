@@ -1,11 +1,13 @@
 import Express from 'express';
-import cors from 'cors';
 import morgan from 'morgan';
 import axios from 'axios';
 
 const server = new Express();
 const logger = morgan('combined');
+const cors = require('cors');
+
 server.use(logger);
+server.use(cors());
 
 const host = '0.0.0.0'
 const port = 7000
@@ -18,7 +20,7 @@ const routes = {
 };
 
 
-server.get('/news', cors({ origin: 'http://localhost:3000'}),  async (req, res) => {
+server.get('/news', async (req, res) => {
   try {
     const urlToNewsList = routes.getNews();
     const news = await axios.get(urlToNewsList);
@@ -38,7 +40,7 @@ server.get('/news', cors({ origin: 'http://localhost:3000'}),  async (req, res) 
   }
 });
 
-server.get('/item/:id', cors({ origin: 'http://localhost:3000'}),  async (req, res) => {
+server.get('/item/:id', async (req, res) => {
   const { id } = req.params;
   try {
     const url = routes.getItem(id);
