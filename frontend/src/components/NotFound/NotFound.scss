@@ -1,0 +1,52 @@
+@import '../common';
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - #{$header-height});
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+    margin-right: 380px;
+
+    @media (max-width: 850px) {
+      margin-right: 100px;
+    }
+
+    @media (max-width: 450px) {
+      margin-right: 0;
+    }
+  }
+
+  &__img {
+    padding-bottom: 50px;
+
+    @media (max-width: 850px) {
+      width: 400px;
+    }
+
+    @media (max-width: 450px) {
+      width: 300px;
+    }
+  }
+
+  &__btn {
+    margin-bottom: 20px;
+    width: 310px;
+  }
+}
+
+.notFound-header {
+  &__img {
+    padding-right: 10px;
+  }
+
+  &__title {
+    text-align: left;
+  }
+}
