@@ -1,10 +1,10 @@
 import Express from 'express';
 import morgan from 'morgan';
 import axios from 'axios';
+import cors from 'cors';
 
 const server = new Express();
 const logger = morgan('combined');
-const cors = require('cors');
 
 server.use(logger);
 server.use(cors());

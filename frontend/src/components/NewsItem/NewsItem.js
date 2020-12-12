@@ -48,7 +48,7 @@ function NewsItem() {
   if (_.isEmpty(currentNewsItemData)) {
     if (loadingNewsItem === 'failed') {
       return (
-        <>
+        <div className="news-item-page">
           <Link className="news-item-page__btn button" to={'/'} onClick={onBackClick} >{t('buttons.back')}</Link>
           <div className="news-update__message loading">{t(`messages.${loadingNewsItem}`)}</div>
           <div className="comments-update">
@@ -58,14 +58,14 @@ function NewsItem() {
               : <div className="news-update__message">{t(`messages.${updatingComments}`)}</div>
             }
           </div>
-        </>
+        </div>
       );
     }
     return (
-      <>
+      <div className="news-item-page">
         <Link className="news-item-page__btn button" to={'/'} onClick={onBackClick} >{t('buttons.back')}</Link>
         <div className="news-update__message loading">{t(`messages.${loadingNewsItem}`)}</div>
-      </>
+      </div>
     );
   }
   return (

@@ -22,7 +22,7 @@ export const clearing = createAction('DATA_CLEAR');
 
 const path = 'http://localhost:7000';
 const timeout = 5000;
-const loadingTimeout = 20000;
+const loadingTimeout = 60000;
 
 export const loadNews = () => async (dispatch) => {
   dispatch(loadingNewsRequest());

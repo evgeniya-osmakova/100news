@@ -1,16 +1,15 @@
 FROM node:13
 
-# Create app directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
-# Install app dependencies
 COPY package*.json ./
 
-RUN npm install
+RUN npm install --silent
 
-# Copy app source code
-COPY . .
+COPY . ./
 
-#Expose port and start application
+RUN npm run build
+
 EXPOSE 3000
-CMD ["npm", "start"]
+
+CMD ["npm", "run", "start"]
