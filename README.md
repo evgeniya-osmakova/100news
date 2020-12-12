@@ -2,13 +2,12 @@
 
     git clone
 
-    npm install
-    
-    npm start
+    docker-compose up --build
+
     
 Проект можно будет посмотреть в браузере по адресу http://localhost:3000/
 
-Запуск тестов:
+Запуск тестов (отдельно для frontend и backend):
 
     npm test
    
