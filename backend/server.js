@@ -10,7 +10,7 @@ server.use(logger);
 server.use(cors());
 
 const host = '0.0.0.0'
-const port = 7000
+const port = 7001
 
 const hackerNewsHost = 'https://hacker-news.firebaseio.com';
 

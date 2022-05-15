@@ -1,10 +1,10 @@
-FROM node:13
+FROM node:16
 
 WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install --silent
+RUN yarn install --silent
 
 COPY . ./
 
@@ -12,4 +12,4 @@ RUN npm run build
 
 EXPOSE 3000
 
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "dev"]
