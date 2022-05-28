@@ -5,15 +5,16 @@ import { globalStyles } from '@/styles/base';
 import { ErrorBoundary } from 'react-error-boundary';
 import Header from '@/blocks/Header';
 
-
 function App() {
   globalStyles();
 
   return <ErrorBoundary FallbackComponent={AppErrorBoundaryFallback}>
-      <BrowserRouter>
-        <Header />
+    <BrowserRouter>
+      <Header />
+      <main>
         <Pages />
-      </BrowserRouter>
+      </main>
+    </BrowserRouter>
   </ErrorBoundary>;
 }
 

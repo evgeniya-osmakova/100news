@@ -51,7 +51,7 @@ function NewsList() {
   }
 
   return (
-    <main>
+    <>
       <Button onClick={refetch} disabled={loading} text="Check news update" style={{
         margin: "2rem auto",
         display: "block",
@@ -63,7 +63,7 @@ function NewsList() {
           <NewsItem newsData={newsData} />
         </StyledLink>)}
       </NewsWrapper>
-    </main>
+    </>
   );
 }
 
