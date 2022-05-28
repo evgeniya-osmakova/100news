@@ -17,7 +17,8 @@ const NewsWrapper = styled('section', {
 const Error = styled('h5', {
   height: "2rem",
   color: "red",
-  margin: "0 auto"
+  display: "flex",
+  justifyContent: "center",
 });
 
 const StyledLink = styled(Link, {
