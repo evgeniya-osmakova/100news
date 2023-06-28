@@ -1,18 +1,6 @@
-import { FC, lazy } from 'react';
-import { PathRouteProps } from 'react-router-dom';
+import { lazy } from 'react';
 
-export enum Pages {
-  News,
-  NotFound,
-  NewsDetails
-}
-
-type PathRouteCustomProps = {
-  title?: string;
-  component: FC;
-};
-
-type Routes = Record<Pages, PathRouteProps & PathRouteCustomProps>;
+import { Pages, Routes } from '@/types/Route'
 
 const routes: Routes = {
   [Pages.News]: {

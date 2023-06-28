@@ -1,13 +1,14 @@
+import { styled } from '@stitches/react';
 import React, { useEffect, useState } from 'react';
+import { generatePath, Link } from 'react-router-dom';
+
 import { getNews } from '@/api/news';
-import { News } from '@/models/models';
-import useRequest from '@/hooks/useRequest';
 import NewsItem from '@/blocks/NewsItem';
 import Button from '@/components/Button';
-import { styled } from '@stitches/react';
-import { generatePath, Link } from 'react-router-dom';
-import Routes, { Pages } from '@/routes';
+import useRequest from '@/hooks/useRequest';
+import Routes from '@/routes';
 import { Container } from '@/styles/base';
+import { News } from '@/types/models';
 
 const NewsWrapper = styled('section', {
   padding: "1rem",
@@ -38,7 +39,13 @@ const StyledLink = styled(Link, {
 });
 
 function NewsList() {
-  const { data, loading, error, refetch } = useRequest(getNews, 10000);
+  const {
+    data,
+    loading,
+    error,
+    refetch
+  } = useRequest(getNews, 10000);
+
   const [news, setNews] = useState<News[]>([]);
 
   useEffect(() => {
@@ -53,16 +60,30 @@ function NewsList() {
 
   return (
     <>
-      <Button onClick={refetch} disabled={loading} text="Check news update" style={{
-        margin: "2rem auto",
-        display: "block",
-      }}/>
+      <Button
+        onClick={refetch}
+        disabled={loading}
+        text="Check news update"
+        style={{
+          margin: "2rem auto",
+          display: "block",
+        }}
+      />
+
       <Error>{error}</Error>
-      {loading && news.length === 0 && <Container content="center">...Loading</Container>}
+
+      {loading && news.length === 0 &&
+        <Container content="center">...Loading</Container>
+      }
+
       <NewsWrapper>
-        {news.map((newsData) => <StyledLink key={newsData.id} to={generatePath(Routes[Pages.NewsDetails].path, {id: String(newsData.id)})} >
-          <NewsItem newsData={newsData} />
-        </StyledLink>)}
+        {news.map((newsData) => (
+          <StyledLink
+            key={newsData.id}
+            to={generatePath(Routes.NewsDetails.path, { id: String(newsData.id) })}
+          >
+            <NewsItem newsData={newsData} />
+          </StyledLink>))}
       </NewsWrapper>
     </>
   );

@@ -10,10 +10,14 @@ const Wrapper = styled(Container, {
 
 function AppErrorBoundaryFallback() {
   return (
-    <Wrapper direction="vertical" align="center">
+    <Wrapper
+      direction="vertical"
+      align="center"
+    >
       <h2>
         Something went wrong. You can:
       </h2>
+
       <a
         target="_blank"
         rel="noreferrer"
@@ -21,8 +25,13 @@ function AppErrorBoundaryFallback() {
       >
         {`contact with author by this email - evgeniya.osmakova@gmail.com`}
       </a>
+
       <h6>or</h6>
-      <Button text="Press here to reload the page" onClick={resetApp} />
+
+      <Button
+        text="Press here to reload the page"
+        onClick={resetApp}
+      />
     </Wrapper>
   );
 }

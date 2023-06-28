@@ -1,6 +1,6 @@
 {
   "name": "100news",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Hacker News reader",
   "homepage": "https://github.com/evgeniya-osmakova/100news",
   "license": "ISC",
@@ -44,16 +44,12 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "https-localhost": "^4.7.1",
     "lint-staged": "^13.2.3",
-    "prettier": "2.8.8",
     "typescript": "^5.1.5",
     "vite": "^4.3.9",
     "vite-plugin-pwa": "^0.16.4",
     "vitest": "^0.32.2"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --write"
-    ],
     "src/**/*.{js,jsx,ts,tsx,json}": [
       "eslint --max-warnings=0"
     ]

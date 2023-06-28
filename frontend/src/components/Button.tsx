@@ -17,9 +17,18 @@ type ButtonProps = {
   style?: CSS,
 }
 
-const Button: React.FC<ButtonProps> = ({ text, onClick, disabled, style }) => {
+const Button: React.FC<ButtonProps> = ({
+  text,
+  onClick,
+  disabled,
+  style
+}) => {
   return (
-    <StyledButton css={style} onClick={onClick} disabled={disabled}>
+    <StyledButton
+      css={style}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {text}
     </StyledButton>
   );

@@ -17,9 +17,33 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "alias": {
+        "map": [[ "@", "./src" ]]
+      }
+    }
+  },
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-curly-spacing": 1,
+    "react/jsx-indent-props": [
+      "error", 2],
+    "react/jsx-indent": [
+      "error", 2],
+    "react/jsx-max-props-per-line": [
+      1,
+      {
+        "maximum": 1,
+        "when": "always"
+      }
+    ],
+    "no-debugger": 2,
+    "no-console": 1
   }
 }
