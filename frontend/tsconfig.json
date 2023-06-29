@@ -16,14 +16,12 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": "./",
-    "types": [
-      "vite-plugin-pwa/client",
-      "vitest/globals"
-    ],
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "types": ["vite/client", "node", "jest", "@testing-library/jest-dom"]
   },
   "include": ["src"],
+  "exclude": ["./vite.config.ts"],
   "references": [{ "path": "./tsconfig.node.json"}]
 }
