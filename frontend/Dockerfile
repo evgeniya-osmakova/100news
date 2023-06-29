@@ -8,7 +8,7 @@ RUN yarn install --silent
 
 COPY . ./
 
-RUN npm run build
+RUN yarn run build
 
 EXPOSE 3000
 
